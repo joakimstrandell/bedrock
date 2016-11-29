@@ -31,5 +31,9 @@ bin
 .vagrant
 
 # Other
+.github
+CHANGELOG.md
+LICENSE.md
+.travisyml
 .editorconfig
 .gitattributes
