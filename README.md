@@ -51,13 +51,13 @@ For documentation on Bedrock please visit the official [Bedrock site](https://ro
 
 5. Access WP admin at `http://example.com/wp/wp-admin`.
 
-## WordPress Plugins
-New plugins should always be installed via Composer on your development machine, never install or update plugins via WP Admin or Inifnite WP. Plugins available in the public [WordPress Packagist](https://wpackagist.org/) are installed using the following command:
+## Plugins and Core
+New plugins and core updates should always be installed via Composer on your development machine. **Never install or update plugins/core via WP Admin or any other graphical user interface!**
+
+Plugins available in the public [WordPress Packagist](https://wpackagist.org/) are installed using the following command:
 
 	composer require wpackagist-plugin/plugin-name
 	
-When plugins have been installed, updated and tested on your local machine, commit all changes and push to your shared respository. After that you can pull changes to staging and run `composer install` to test. After that you can pull changes to production.
+When new plugins have been **installed**, **updated** and **tested** on your **development machine**, commit all changes and push to the projects shared respository. After that you can pull changes to Staging and run `composer install`. If tested OK on Staging you can pull changes to Live and run `composer install`.
 
-## WordPress Core
-
-Try to always run composer update or require on your development machine and the commit and push those changes to the projects repository. 
+This means that you should avoid running `composer update` on Staging or Live. If you do this you **must** commit all changes and push to the projects shared respository so that all environments can be synced.
