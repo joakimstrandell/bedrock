@@ -21,7 +21,11 @@ For documentation on Bedrock please visit https://roots.io/bedrock/docs/installi
 
   `git clone https://github.com/joakimstrandell/bedrock public`
 
-2. Copy `.env.example` to `.env` and update environment variables:
+2. Navigate to the cloned repository folder and install PHP dependencies.
+
+  `composer install`
+
+3. Copy `.env.example` to `.env` and update environment variables:
 
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
@@ -34,11 +38,11 @@ For documentation on Bedrock please visit https://roots.io/bedrock/docs/installi
 
   You can automatically generate the security keys (assuming you have wp-cli installed locally):
 
-      $ wp package install aaemnnosttv/wp-cli-dotenv-command
-      $ wp dotenv salts regenerate
+      wp package install aaemnnosttv/wp-cli-dotenv-command
+      wp dotenv salts regenerate
 
   Or, you can cut and paste from the [Roots WordPress Salt Generator][roots-wp-salt].
 
-3. Set your site vhost document root to `/path/to/site/web/`.
+4. Set your site vhost document root to `/path/to/site/web/`.
 
-4. Access WP admin at `http://example.com/wp/wp-admin`.
+5. Access WP admin at `http://example.com/wp/wp-admin`.
