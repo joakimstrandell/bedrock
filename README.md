@@ -52,12 +52,13 @@ For documentation on Bedrock please visit the official [Bedrock site](https://ro
 5. Access WP admin at `http://example.com/wp/wp-admin`.
 
 ## Plugins and Core
-New plugins and core updates should always be installed via Composer on your development machine. **Never install or update plugins/core via WP Admin or any other graphical user interface!**
-
-Plugins available in the public [WordPress Packagist](https://wpackagist.org/) are installed using the following command:
+New plugins should always be installed and tested on your development machine first. To install plugins available in the public [WordPress Packagist](https://wpackagist.org/) you should use Composer. **Always avoid installing plugins via WP Admin or any other graphical user interface!**
 
 	composer require wpackagist-plugin/plugin-name
-	
-When new plugins have been **installed**, **updated** and **tested** on your **development machine**, commit all changes and push to the projects shared respository. After that you can pull changes to Staging and run `composer install`. If tested OK on Staging you can pull changes to Live and run `composer install`.
 
-This means that you should avoid running `composer update` on Staging or Live. If you do this you **must** commit all changes and push to the projects shared respository so that all environments can be synced.
+Premium plugins are added to the repository manually, note that you need to add the plugin folder to `.gitignore` so that the plugin is tracket by git and added to the repository.
+
+When a new plugin have been **installed**, **updated** and **tested** on your **development machine**, commit all changes and push to the projects shared respository. After that you can pull changes to Staging and run `composer install`. If tested OK on Staging you can pull changes to Live and run `composer install`.
+
+### Updating without Composer
+If you update plugins and core via the WP Admin (or any other user interface like Inifite WP), you must update the composer.json file on your development machine and push changes to the projects shared respository. After that you should also pull those changes to Staging and Live.
